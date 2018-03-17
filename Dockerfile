@@ -34,7 +34,9 @@ RUN mv /setenv.sh /opt/alfresco/tomcat/bin/setenv.sh
 RUN mv /opt/alfresco/alf_data /opt/alfresco/alf_data_back
 RUN mkdir /opt/alfresco/alf_data
 COPY create.sql /
-RUN   apt-get update && apt-get install -y vim
+RUN   apt-get update && apt-get upgrade -y && apt-get install -y vim
+COPY server.xml /opt/alfresco/tomcat/conf/server.xml
+COPY share-security-config.xml /share-security-config.xml
 EXPOSE 8443
 ENTRYPOINT ["/entry.sh"]
 

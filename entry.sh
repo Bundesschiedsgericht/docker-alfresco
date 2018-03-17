@@ -35,7 +35,9 @@ else
         echo "Running only $CONTAINER_FUNCTION";
         /opt/alfresco/alfresco.sh start $CONTAINER_FUNCTION;
 fi
-    echo "After fi6";
+
+mv share-security-config.xml /opt/alfresco/tomcat/webapps/share/WEB-INF/classes/alfresco/share-security-config.xml
+echo "After fi6";
 
 # loop so container does not exit
 while true;do sleep 5;done;
