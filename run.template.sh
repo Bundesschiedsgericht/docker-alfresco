@@ -33,3 +33,7 @@ docker run -d \
 -p 8025:25 \
 --name alfresco \
 exception/alfresco
+
+#need to restart to apply CRSF settings
+sleep 30
+docker restart alfresco
