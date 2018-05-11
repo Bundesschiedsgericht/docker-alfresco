@@ -75,7 +75,7 @@
             Override and set this property with a regexp that if you have placed Share behind a proxy that
             does not rewrite the Referer header.
          -->
-         <referer>https://piraten-bsg.de/.*</referer>
+         <referer>https://alfresco.piraten-bsg.de/.*</referer>
 
          <!--
             Override and set this property with a regexp that if you have placed Share behind a proxy that

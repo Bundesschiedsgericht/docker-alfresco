@@ -36,8 +36,15 @@ else
         /opt/alfresco/alfresco.sh start $CONTAINER_FUNCTION;
 fi
 
-mv share-security-config.xml /opt/alfresco/tomcat/webapps/share/WEB-INF/classes/alfresco/share-security-config.xml
-echo "After fi6";
+echo "started";
+
+while [ ! -d "/opt/alfresco/tomcat/webapps/share/WEB-INF/classes/alfresco" ]
+do
+  sleep 1
+done
+
+cp share-security-config.xml /opt/alfresco/tomcat/webapps/share/WEB-INF/classes/alfresco/share-security-config.xml
+echo "restart";
 
 # loop so container does not exit
 while true;do sleep 5;done;
